@@ -18,6 +18,7 @@
 
     <button
         class="button expanded"
+        (click)="clickedProduct()"
         [class.success]="data.state === 'selling'"
         [class.secondary]="data.state === 'sold'">
         <span *ngIf="data.state === 'selling'">

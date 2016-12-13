@@ -1,3 +1,4 @@
+import { Pipe, PipeTransform } from "@angular/core";
 import * as moment from "moment";
 import "moment/locale/es";
 
@@ -12,3 +13,14 @@ import "moment/locale/es";
 | proceda. Haciendo 'moment(fecha).fromNow()' obtenemos justo lo   |
 | que necesitamos.                                                 |
 |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@Pipe({
+    name: "FromNowPipe"
+})
+export class PublicationDatePipe implements PipeTransform {
+
+    transform(datestring: string): string {
+        return moment(datestring).fromNow();
+    }
+
+}

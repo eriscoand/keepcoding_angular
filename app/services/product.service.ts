@@ -59,8 +59,19 @@ export class ProductService {
         |       state=x (siendo x el estado)                               |
         |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+        var qString = "_sort=publishedDate&_order=DESC";
+
+        if(filter){
+            if(filter.text !== undefined && filter.text !== ""){
+                qString += "&q=" + filter.text;
+            }
+            if(filter.category !== undefined && filter.category !== ""){
+                qString += "&category.id=" + filter.category;
+            }
+        }
+
         return this._http
-                   .get(`${this._backendUri}/products`)
+                   .get(`${this._backendUri}/products?${qString}`)
                    .map((data: Response): Product[] => Product.fromJsonToList(data.json()));
     }
 
