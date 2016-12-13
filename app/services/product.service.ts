@@ -68,6 +68,9 @@ export class ProductService {
             if(filter.category !== undefined && filter.category !== ""){
                 qString += "&category.id=" + filter.category;
             }
+            if(filter.state !== undefined && filter.state !== ""){
+                qString += "&state=" + filter.state
+            }
         }
 
         return this._http
