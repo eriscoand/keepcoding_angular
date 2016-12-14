@@ -23,6 +23,8 @@ import { UserService } from "./services/user.service";
 
 import { PublicationDatePipe } from "./pipes/publication-date.pipe";
 
+import { CookieService } from 'angular2-cookie/services/cookies.service';
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
 | Blue Path                                                        |
 |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
@@ -55,7 +57,8 @@ import { PublicationDatePipe } from "./pipes/publication-date.pipe";
         ProductDetailResolve,
         ProductService,
         SoldProductsResolve,
-        UserService
+        UserService,
+        CookieService
     ],
     bootstrap: [
         AppComponent

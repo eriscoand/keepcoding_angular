@@ -4,3 +4,16 @@
     padding-top: 28px;
     margin-bottom: 20px;
 }
+
+button {
+    font-size:22px;
+    float:right;
+}
+
+button.like{
+    background-color: #F8D12E;
+}
+
+button.dislike{
+    background-color: lightslategrey;
+}

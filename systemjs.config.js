@@ -19,7 +19,8 @@
             "rxjs": "npm:rxjs",
             "angular-in-memory-web-api": "npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js",
             "moment": "npm:moment",
-            "primeng": "npm:primeng"
+            "primeng": "npm:primeng",
+            'angular2-cookie': 'npm:angular2-cookie'
         },
         "packages": {
             "app": {
@@ -35,6 +36,14 @@
             },
             "primeng": {
                 "defaultExtension": "js"
+            },
+            'angular2-in-memory-web-api': {
+                main: './index.js',
+                defaultExtension: 'js'
+            },
+            'angular2-cookie': {
+                main: './core.js',
+                defaultExtension: 'js'
             }
         }
     });

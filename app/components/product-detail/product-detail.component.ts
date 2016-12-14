@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Subscription } from "rxjs/Subscription";
 
 import { ConfirmationService } from "primeng/primeng";
+import { CookieService } from 'angular2-cookie/core';
 
 import { Product } from "../../models/product";
 import { ProductService } from "../../services/product.service";
@@ -16,15 +17,22 @@ export class ProductDetailComponent implements OnDestroy, OnInit {
     private _product: Product;
     private _productSubscription: Subscription;
 
+    userLike: boolean = false;
+
     constructor(
         private _productService: ProductService,
         private _route: ActivatedRoute,
         private _router: Router,
-        private _confirmationService: ConfirmationService) { }
+        private _confirmationService: ConfirmationService,
+        private _cookieService:CookieService) { }
 
     ngOnInit(): void {
         this._route.data.forEach((data: { product: Product }) => this._product = data.product);
         window.scrollTo(0, 0);
+
+        this.userLike = this._cookieService.get("whatapop_"+this._product.id) === "true"
+            ? true 
+            : false;
     }
 
     ngOnDestroy(): void {
@@ -60,5 +68,10 @@ export class ProductDetailComponent implements OnDestroy, OnInit {
 
     goBack(): void {
         window.history.back();
+    }
+
+    changeLike(): void {
+        this.userLike = !this.userLike;
+        this._cookieService.put("whatapop_" + this._product.id, this.userLike.toString());
     }
 }
