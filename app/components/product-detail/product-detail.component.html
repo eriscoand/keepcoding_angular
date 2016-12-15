@@ -8,6 +8,15 @@
                 <h3>{{ _product.name }}</h3>
             </div>
             <div class="medium-4 columns">
+
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+            | Broken White Path                                                |
+            |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+               Botón de LIKE del producto. Lanza una función. Modifica el 
+               estilo según el valor de la variable userLike
+            
+            |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
                 <button class="button"
                         (click)="changeLike()"
                         [class.like]="userLike === true"
@@ -35,8 +44,6 @@
         </p>
         <p [innerHtml]="_product.description"></p>
 
-        <user-profile [userId]="_product.seller.id"></user-profile>
-
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
         | Purple Path                                                      |
         |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
@@ -52,6 +59,9 @@
         <button
             (click)="goBack()"
             class="warning button expanded">Volver</button>
+            
+        <user-profile [userId]="_product.seller.id"></user-profile>
+
     </div>
     <p-confirmDialog header="Confirmación de compra" width="625" #cd></p-confirmDialog>
 </div>

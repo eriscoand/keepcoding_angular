@@ -7,6 +7,13 @@ import { Product } from "../models/product";
 })
 export class PriceRangePipe{
 
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+    | Red Wine Path                                                  |
+    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+      Filtro por precio
+
+    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|*/
+
     transform(products: Product[], price1: number, price2: number){
 
         if (!price1 || !price2){

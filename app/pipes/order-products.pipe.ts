@@ -7,6 +7,14 @@ import { Product } from "../models/product";
 })
 export class OrderProductsPipe{
 
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+    | Red Wine Path                                                  |
+    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+      Ordenación por texto o por número, pasando el parámetro
+
+    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|*/
+
+
     transform(products: Product[], orderBy: any, sorting = "asc"){
 
         if (!orderBy || orderBy.trim() == ""){

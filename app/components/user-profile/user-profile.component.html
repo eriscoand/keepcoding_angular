@@ -4,9 +4,20 @@
             <img [src]="getImageSrc()" class="thumbnail" />
         </div>
     </div>
-    <div>
+    <div class="row">
         <p class="text-center">
             <strong>{{ user?.name }}</strong> | {{ user?.nick }}
         </p>
+    </div>
+    <div class="row">
+        <div class="small-up-2 medium-up-4 large-up-6">
+            <h3>Más productos de este vendedor...</h3>
+            <product
+                *ngFor="let product of _products"
+                [data]="product"
+                class="column"
+                (selectedProduct)="selectedProduct($event)">
+            </product>
+        </div>
     </div>
 </div>

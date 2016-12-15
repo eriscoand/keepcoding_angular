@@ -29,6 +29,7 @@ export class ProductDetailComponent implements OnDestroy, OnInit {
         this._route.data.forEach((data: { product: Product }) => this._product = data.product);
         window.scrollTo(0, 0);
 
+        // (Broken white path) Vamos a buscar al servicio si al usuario le gusta el producto!
         this.userLike = this._productService.isLike(this._product);
     }
 
@@ -66,6 +67,14 @@ export class ProductDetailComponent implements OnDestroy, OnInit {
     goBack(): void {
         window.history.back();
     }
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+    | Broken White Path                                              |
+    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+      Función que modifica el valor de userLike y persiste en 
+      el servicio 
+
+    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|*/
 
     changeLike(): void {
         this.userLike = !this.userLike;

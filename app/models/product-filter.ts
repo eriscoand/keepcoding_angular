@@ -6,4 +6,5 @@ export interface ProductFilter {
     stateSelling?: boolean;
     price_min?:string;
     price_max?:string;
+    sellerId?:string;
 }

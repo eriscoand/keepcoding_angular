@@ -71,6 +71,9 @@ export class ProductService {
             if(filter.state !== undefined && filter.state !== ""){
                 qString += "&state=" + filter.state
             }
+            if(filter.sellerId !== undefined && filter.sellerId !== ""){
+                qString += "&seller.id=" + filter.sellerId;
+            }
         }
 
         return this._http
@@ -97,6 +100,14 @@ export class ProductService {
                    .patch(`${this._backendUri}/products/${productId}`, body)
                    .map((data: Response): Product => Product.fromJson(data.json()));
     }
+
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+    | Broken White Path                                              |
+    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+      Persistir y obtener el like a un producto en localStorage
+
+    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|*/
 
     setLike(product: Product, like: boolean): void{
         localStorage.setItem("product_"  + product.id, JSON.stringify(like));

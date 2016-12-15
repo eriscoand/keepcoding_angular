@@ -34,6 +34,13 @@ export class ProductFilterComponent implements OnInit, OnDestroy {
         this.onSearch.emit(this._productFilter);
     }
     
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+    | Red Wine Path                                                  |
+    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+      Evento que lanza el filtro pipe
+
+    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|*/
+
     sorting(): void {
         this.onSorting.emit(this._productFilter);
     }

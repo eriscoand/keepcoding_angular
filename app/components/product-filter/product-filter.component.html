@@ -1,6 +1,6 @@
 <div class="row">
     <div class="small-6 medium-3 large-3 columns">
-        <input (input)="notifyHost()" [(ngModel)]="_productFilter.text" type="text" placeholder="Pe. Uncharted">
+        <input (keyup)="notifyHost()" [(ngModel)]="_productFilter.text" type="text" placeholder="Pe. Uncharted">
     </div>
     <div class="small-6 medium-3 large-3 columns">
         <select (change)="notifyHost()" [(ngModel)]="_productFilter.category">
@@ -21,8 +21,8 @@
     </div>
 <div class="row">
     <div class="small-12 medium-12 large-12 columns">
-        Precio de <input class="number"  (input)="sorting()" type="number" [(ngModel)]="_productFilter.price_min" value="0"> 
+        Precio de <input class="number"  (keyup)="sorting()" type="number" [(ngModel)]="_productFilter.price_min" value="0"> 
         hasta 
-        <input class="number" (input)="sorting()" type="number" [(ngModel)]="_productFilter.price_max" value="0">
+        <input class="number" (keyup)="sorting()" type="number" [(ngModel)]="_productFilter.price_max" value="0">
     </div>
 </div> 

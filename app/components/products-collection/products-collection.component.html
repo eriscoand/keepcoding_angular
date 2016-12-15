@@ -13,13 +13,13 @@
         | definido en él para notificar los clics sobre los productos.     |
         |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-
         <product
             *ngFor="let product of _products | priceRange : _pricemin : _pricemax | isState : _state | orderProductsBy : _orderBy : _sorting"
             [data]="product"
             class="column"
             (selectedProduct)="selectedProduct($event)">
         </product>
+        
     </div>
     <div *ngIf="_products?.length === 0" class="text-center">
         <span>No se han encontrado productos.</span>
