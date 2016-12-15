@@ -6,3 +6,8 @@
     padding-top: 28px;
     padding-bottom: 8px;
 }
+
+input.number{
+    width:150px;
+    display:inline;
+}

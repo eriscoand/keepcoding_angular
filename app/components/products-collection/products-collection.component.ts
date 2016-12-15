@@ -15,6 +15,11 @@ export class ProductsCollectionComponent implements OnDestroy, OnInit {
     
     private _products: Product[];
     private _filterStream$: Subject<ProductFilter> = new Subject;
+    private _orderBy : String;
+    private _sorting : String;
+    private _pricemin : Number;
+    private _pricemax : Number;
+    private _state : string;
 
     constructor(private _router: Router,
         private _productService: ProductService) { }
@@ -32,6 +37,23 @@ export class ProductsCollectionComponent implements OnDestroy, OnInit {
 
     filterCollection(filter: ProductFilter): void {
         this._filterStream$.next(filter);
+    }
+
+    filterOfflineCollection(filter: ProductFilter): void {
+        if(filter._sorting){
+            let w: string[] = filter._sorting.split("_");
+            this._orderBy = w[0];
+            this._sorting = w[1];
+        }
+
+        this._state = "";
+        if(filter.stateSelling){
+            this._state = "selling";
+        }
+
+        this._pricemin = parseInt(filter.price_min);
+        this._pricemax = parseInt(filter.price_max);
+
     }
 
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|

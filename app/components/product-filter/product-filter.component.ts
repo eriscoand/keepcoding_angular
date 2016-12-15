@@ -13,6 +13,7 @@ import { ProductFilter } from "../../models/product-filter";
 export class ProductFilterComponent implements OnInit, OnDestroy {
 
     @Output() onSearch: EventEmitter<ProductFilter> = new EventEmitter();
+    @Output() onSorting: EventEmitter<ProductFilter> = new EventEmitter();
     private _productFilter: ProductFilter = {};
     private _categories: Category[];
     private _categoriesSubscription: Subscription;
@@ -31,5 +32,9 @@ export class ProductFilterComponent implements OnInit, OnDestroy {
 
     notifyHost(): void {
         this.onSearch.emit(this._productFilter);
+    }
+    
+    sorting(): void {
+        this.onSorting.emit(this._productFilter);
     }
 }

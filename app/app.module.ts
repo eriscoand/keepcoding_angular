@@ -22,8 +22,9 @@ import { UserProfileComponent } from "./components/user-profile/user-profile.com
 import { UserService } from "./services/user.service";
 
 import { PublicationDatePipe } from "./pipes/publication-date.pipe";
-
-import { CookieService } from 'angular2-cookie/services/cookies.service';
+import { OrderProductsPipe } from "./pipes/order-products.pipe";
+import { PriceRangePipe } from "./pipes/price-range.pipe";
+import { StateProductPipe } from "./pipes/state-product.pipe";
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
 | Blue Path                                                        |
@@ -47,7 +48,10 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
         ProductResetComponent,
         ProductsCollectionComponent,
         UserProfileComponent,
-        PublicationDatePipe
+        PublicationDatePipe,
+        OrderProductsPipe,
+        PriceRangePipe,
+        StateProductPipe
     ],
     providers: [
         BackendUriProvider,
@@ -57,8 +61,7 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
         ProductDetailResolve,
         ProductService,
         SoldProductsResolve,
-        UserService,
-        CookieService
+        UserService
     ],
     bootstrap: [
         AppComponent

@@ -97,4 +97,15 @@ export class ProductService {
                    .patch(`${this._backendUri}/products/${productId}`, body)
                    .map((data: Response): Product => Product.fromJson(data.json()));
     }
+
+    setLike(product: Product, like: boolean): void{
+        localStorage.setItem("product_"  + product.id, JSON.stringify(like));
+    }
+
+    isLike(product: Product): boolean{
+        return localStorage.getItem("product_"+product.id) === "true"
+            ? true 
+            : false;
+    }
+    
 }
